@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+@import "./pages/homepage";
+@import "./pages/form";
+@import "./components/stepindicator";
+@import "./components/tabeldatakaryawan";
+// @import "./components/details";
+@import "./components/datapersonal";
+@import "./components/riwayatpendidikan";
+@import "./components/pengalamankerja";
+@import "./components/keahlian";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}

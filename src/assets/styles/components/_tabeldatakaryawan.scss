@@ -1,0 +1,34 @@
+.table-container{
+	border-collapse: collapse;
+	border: 1px solid lightgray;
+	text-align: center;
+	.table-header{
+		background-color: lightgray;
+		height: 6vh;
+		.table-header-id{
+			width: 20vw;
+		}
+		.table-header-nama{
+			width: 20vw;
+		}
+		.table-header-alamat{
+			width: 40vw;
+		}
+		.table-header-detail{
+			width: 20vw;
+		}
+	}
+	.table-data{
+		height: 20vh;
+		.td1{
+			border-left: 2px solid lightgray;
+		}
+		.td2{
+			border-left: 2px solid lightgray;
+			border-right: 2px solid lightgray;
+		}
+		.td3{
+			border-right: 2px solid lightgray;
+		}
+	}
+}

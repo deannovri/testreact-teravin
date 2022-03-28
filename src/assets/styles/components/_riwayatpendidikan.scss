@@ -1,0 +1,42 @@
+.riwayatpendidikan-container{
+	width: 100%;
+	.riwayatpendidikan-form-container{
+		margin-top: 5vh;
+		background-color: lightgray;
+		padding: 20px;
+		border-radius: 20px;
+		.riwayatpendidikan-form{
+			display: flex;
+			flex-direction: column;
+		}
+		.riwayatpendidikan-form-button{
+			display: flex;
+    		justify-content: flex-end;
+			button{
+				height: 5vh;
+			    width: 15vh;
+			    margin: 2vh 1vw;
+			    border-radius: 10px;
+			    border: none;
+			    background-color: white;
+			}
+			button:hover{
+			cursor: pointer;
+			border: 1px solid black;
+		}
+		}
+	}
+	label{
+		margin: 0.5vh 2vh 0.5vh 0vh;
+	}
+	input{
+		margin: 0.5vh 0vh;
+		height: 3vh;
+		border-radius: 5px;
+		border: none;
+		font-size: 1.3vw;
+	}
+	input:focus{
+		outline:none;
+	}
+}

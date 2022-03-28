@@ -1,0 +1,17 @@
+.homepage-container{
+	padding: 5vh 5vw;
+	display: flex;
+	flex-direction: column;
+	.homepage-title{
+		font-size: 2vw;
+		text-align: center;
+	}
+	.homepage-add-button{
+		width: 100px;
+		height: 30px;
+		border-radius: 10px;
+		cursor: pointer;
+		margin: 50px 0px 50px;
+		border: 2px solid #444;
+	}
+}
