@@ -212,7 +212,7 @@ function Form() {
 
 	return (
 		<div className="adddata-container">
-			<div className="adddata-title">Form submission</div>
+			<h1>Form submission</h1>
 			<FormContext.Provider 
 			value={[
 				page, 
@@ -240,6 +240,11 @@ function Form() {
 				newDataKaryawan
 				]}>
 				<StepIndicator/>
+				{page === 1 ? <div className="judul-form">Data Personal</div> : null }
+				{page === 2 ? <div className="judul-form">Riwayat Pendidikan</div> : null }
+				{page === 3 ? <div className="judul-form">Pengalaman Kerja</div> : null }
+				{page === 4 ? <div className="judul-form">Keahlian</div> : null }
+				{page === 5 ? <div className="judul-form">Data Preview</div> : null }
 				<DataPersonal/>
 				<RiwayatPendidikan/>
 				<PengalamanKerja/>
@@ -249,7 +254,7 @@ function Form() {
 			<div className="form-button">
 				{
 					page === 1 ?
-					Object.keys(errorDataPersonal).length === 0 ? <input type="button" value="Next" onClick={() => {next()}}/> :
+					Object.keys(errorDataPersonal).length === 0 ? <input type="button" value="Riwayat Pendidikan" onClick={() => {next()}}/> :
 					<input type="button" value="Next" onClick={(e) => {handleClickValidationDataPersonal(e)}}/>
 					: null
 				}	
@@ -270,10 +275,6 @@ function Form() {
 				{
 					page === 4 ? 
 					<input type="button" value="Next" onClick={() => {next()}}/> : null
-				}
-				{
-					page === 5 ? 
-					<input type="submit" value="Submit" onClick={() => {next()}}/> : null
 				}
 			</div>
 		</div>

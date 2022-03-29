@@ -2,9 +2,12 @@
 	padding: 5vh 5vw;
 	display: flex;
 	flex-direction: column;
-	.homepage-title{
-		font-size: 2vw;
+	h1{
 		text-align: center;
+		margin-bottom: 2vh;
+	}
+	.add-data-please{
+		color: red;
 	}
 	.homepage-add-button{
 		width: 100px;

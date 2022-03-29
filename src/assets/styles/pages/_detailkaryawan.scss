@@ -1,0 +1,71 @@
+.detail-karyawan-container{
+	.detail-karyawan-button{
+	button{
+		height: 5vh;
+		width: 15vh;
+		margin: 2vh 1vw;
+		border-radius: 10px;
+		border: none;
+		background-color: lightgray;
+	}
+	button:hover{
+			cursor: pointer;
+			border: 1px solid black;
+		}
+	}
+	padding: 5vh 5vw;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	h1{
+		margin-bottom: 2vh;
+	}
+	h3{
+		text-align: center;
+	}
+	div{
+		margin-bottom: 1vh;
+		font-size: 16px;
+		span{
+			font-weight: 700;
+			font-size: 18px;
+		}
+	}
+	.data-personal{
+		width: 100%;
+		background-color: lightgray;
+		margin-bottom: 2vh;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	.riwayat-pendidikan{
+		width: 100%;
+		background-color: lightgray;
+		margin-bottom: 2vh;
+		border-radius: 10px;
+		padding: 20px;
+		.riwayat-pendidikan-list{
+			margin-bottom: 2vh;
+		}
+	}
+	.pengalaman-kerja{
+		width: 100%;
+		background-color: lightgray;
+		margin-bottom: 2vh;
+		border-radius: 10px;
+		padding: 20px;
+		.pengalaman-kerja-list{
+			margin-bottom: 2vh;
+		}
+	}
+	.keahlian{
+		width: 100%;
+		background-color: lightgray;
+		border-radius: 10px;
+		padding: 20px;
+		.keahlian-list{
+			margin-bottom: 2vh;
+		}
+	}
+}

@@ -1,29 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Homepage from './pages/Homepage'
 import Form from './pages/Form'
+import DetailKaryawan from './pages/DetailKaryawan'
 import { KaryawanContext } from './context/Context'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [initialDataKaryawan, setInitialDataKaryawan] = useState([
-   {
-          id:"1",
-          nama:"dean",
-          tglLahir:"1995-11-09", 
-          noHp:"0892556556", 
-          email:"dean@gmail.com",
-          alamat:"Medan",
-      },
-      {
-          id:"2",
-          nama:"novri",
-          tglLahir:"1998-06-09", 
-          noHp:"089255613556", 
-          email:"novri@gmail.com",
-          alamat:"Batam",
-      }
-    ])
+  const [initialDataKaryawan, setInitialDataKaryawan] = useState([])
+
+  useEffect(() => {
+    const allDataKaryawan = localStorage.getItem("dataKaryawan")
+    const data = JSON.parse(allDataKaryawan)
+    setInitialDataKaryawan(data)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("dataKaryawan", JSON.stringify(initialDataKaryawan))
+  }, [initialDataKaryawan])
 
   return (
     <Router>
@@ -31,6 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage/>} />
         <Route path='/form' element={<Form/>} />
+        <Route path='/:id' element={<DetailKaryawan/>} />
       </Routes>
       </KaryawanContext.Provider>
     </Router>

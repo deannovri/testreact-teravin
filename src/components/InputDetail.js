@@ -1,7 +1,10 @@
 import React, { useContext } from 'react'
 import { FormContext } from '../context/Context'
+import { useNavigate } from 'react-router-dom'
 
 function InputDetail() {
+
+	let goBackToHomepage = useNavigate()
 
 	const result = useContext(FormContext)
 	const page = result[0]
@@ -11,35 +14,42 @@ function InputDetail() {
 	const Keahlian = result[13]
 	const dataKaryawanAwal = result[17]
 	const dataKaryawanBaru = result[18]
-	console.log(dataKaryawanAwal)
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+		const pendidikan = RiwayatPendidikan.map(res => res)
+		const pengalaman = PengalamanKerja.map(res => res)
+		const keahlian = Keahlian.map(res => res)
 		const newData = [...dataKaryawanAwal, {
-			id: Math.random(),
+			id: Math.random().toString(),
 			namaDepan: DataPersonal.namaDepan,
 			namaBelakang: DataPersonal.namaBelakang,
 			tglLahir: DataPersonal.tglLahir,
 			noHp: DataPersonal.noHp,
 			email: DataPersonal.email,
 			alamat: DataPersonal.alamat,
+			pendidikan: pendidikan,
+			pengalaman: pengalaman,
+			keahlian: keahlian
 		}]
 		dataKaryawanBaru(newData)
+		goBackToHomepage('/')
 	}
 
 	return (
 		<>
 			{
-				page === 5 ? 
+				page === 5 ?
+				<> 
 				<div className="input-detail-container">
 					<div className="data-personal-input">
 						<h2>Data Personal</h2>
-						<div>Nama Depan: {DataPersonal.namaDepan}</div>
-						<div>Nama Belakang: {DataPersonal.namaBelakang}</div>
-						<div>Tanggal Lahir: {DataPersonal.tglLahir}</div>
-						<div>Nomor Hp: {DataPersonal.noHp}</div>
-						<div>Alamat email: {DataPersonal.email}</div>
-						<div>Alamat: {DataPersonal.alamat}</div>
+						<div>Nama Depan: <span>{DataPersonal.namaDepan}</span></div>
+						<div>Nama Belakang: <span>{DataPersonal.namaBelakang}</span></div>
+						<div>Tanggal Lahir: <span>{DataPersonal.tglLahir}</span></div>
+						<div>Nomor Hp: <span>{DataPersonal.noHp}</span></div>
+						<div>Alamat email: <span>{DataPersonal.email}</span></div>
+						<div>Alamat: <span>{DataPersonal.alamat}</span></div>
 					</div>
 					<div className="riwayat-pendidikan-input">
 						<h2>Riwayat Pendidikan</h2>
@@ -47,9 +57,9 @@ function InputDetail() {
 							RiwayatPendidikan.map((res, i) => {
 								return (
 									<div key={i}>
-										<div>Pendidikan: {res.pendidikan}</div>
-										<div>Jurusan: {res.jurusan}</div>
-										<div>Tahun Lulus: {res.tahunLulus}</div>
+										<div>Pendidikan: <span>{res.pendidikan}</span></div>
+										<div>Jurusan: <span>{res.jurusan}</span></div>
+										<div>Tahun Lulus: <span>{res.tahunLulus}</span></div>
 									</div>
 									)
 							})
@@ -61,10 +71,10 @@ function InputDetail() {
 							PengalamanKerja.map((res, i) => {
 								return (
 									<div key={i}>
-										<div>Perusahaan: {res.perusahaan}</div>
-										<div>Posisi: {res.posisi}</div>
-										<div>Dari: {res.dari}</div>
-										<div>Sampai: {res.sampai}</div>
+										<div>Perusahaan: <span>{res.perusahaan}</span></div>
+										<div>Posisi: <span>{res.posisi}</span></div>
+										<div>Dari: <span>{res.dari}</span></div>
+										<div>Sampai: <span>{res.sampai}</span></div>
 									</div>
 									)
 							})
@@ -72,22 +82,22 @@ function InputDetail() {
 					</div>
 					<div className="keahlian-input">
 						<h2>Keahlian</h2>
-						<div>Keahlian:</div>
 						{
 							Keahlian.map((res, i) => {
 								return (
 									
 									<div key={i}>
-										<div>{res.keahlian}</div>
+										<div><span>{res.keahlian}</span></div>
 									</div>
 									)
 							})
 						}
 					</div>
-					<div>
-						<button onClick={(e) => {handleSubmit(e)}}>Submit</button>
-					</div>
 				</div>
+				<div className="input-detail-submit">
+						<button onClick={(e) => {handleSubmit(e)}}>Submit</button>
+				</div>
+				</>
 				: null
 			}
 		</>

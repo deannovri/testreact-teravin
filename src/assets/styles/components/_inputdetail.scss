@@ -1,0 +1,60 @@
+.input-detail-container{
+	padding: 5vh 5vw;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	h2{
+		text-align: center;
+		margin-bottom: 2vh;
+	}
+	div{
+		margin-bottom: 1vh;
+		font-size: 16px;
+		span{
+			font-weight: 700;
+			font-size: 18px;
+		}
+	}
+	.data-personal-input{
+		width: 100%;
+		background-color: lightgray;
+		margin-bottom: 2vh;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	.riwayat-pendidikan-input{
+		width: 100%;
+		background-color: lightgray;
+		margin-bottom: 2vh;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	.pengalaman-kerja-input{
+		width: 100%;
+		background-color: lightgray;
+		margin-bottom: 2vh;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	.keahlian-input{
+		width: 100%;
+		background-color: lightgray;
+		border-radius: 10px;
+		padding: 20px;
+	}
+}
+.input-detail-submit{
+	button{
+		height: 5vh;
+		width: 15vh;
+		margin: 2vh 1vw;
+		border-radius: 10px;
+		border: none;
+		background-color: lightgray;
+	}
+	button:hover{
+			cursor: pointer;
+			border: 1px solid black;
+		}
+}
